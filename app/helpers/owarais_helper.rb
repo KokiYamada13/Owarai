@@ -1,0 +1,2 @@
+module OwaraisHelper
+end

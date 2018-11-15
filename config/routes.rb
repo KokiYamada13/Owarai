@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'owarais/create'
+
+  get 'owarais/destroy'
+
   root to: 'toppages#index'
   
   get 'login', to: 'sessions#new'
@@ -7,4 +11,6 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create]
+  
+  resources :owarais, only: [:create, :destroy]
 end

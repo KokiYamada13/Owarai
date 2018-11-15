@@ -1,0 +1,24 @@
+<ul class="media-list">
+  <% owarais.each do |owarai| %>
+    <li class="media">
+      <div class="media-left">
+        <img class="media-object img-rounded" src="<%= gravatar_url(owarai.user, { size: 50 }) %>" alt="">
+      </div>
+      <div class="media-body">
+        <div>
+          <%= link_to owarai.user.name, user_path(owarai.user) %> <span class="text-muted">ネタ見せ at <%= owarai.created_at %></span>
+        </div>
+        <div>
+          <td><%= image_tag owarai.image.to_s %></td>
+          <p><%= owarai.content %></p>
+        </div>
+        <div>
+          <% if current_user == owarai.user %>
+            <%= link_to "Delete", owarai, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate owarais %>
+</ul>
