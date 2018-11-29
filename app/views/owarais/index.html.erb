@@ -1,6 +1,6 @@
 <h1>ネタ一覧</h1>
 
-<ul class="neta">
+<ul class="neta" style="display: flex; flex-wrap: wrap;">
   <% @owarais.each do |owarai| %>
     <li><p><%= image_tag owarai.image.to_s %></p>
     <p><%= owarai.content %></p></li>

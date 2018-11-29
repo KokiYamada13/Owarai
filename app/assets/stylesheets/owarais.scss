@@ -9,11 +9,12 @@ img {
 
 ul.neta {
   list-style-type: none;
-  display: flex; 
+  display: flex;
 }
 
 ul.neta li {
   border: 1px solid #ccc;
   margin: 5px;
   padding: 5px;
+  overflow: scroll;
 }
